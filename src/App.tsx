@@ -143,8 +143,7 @@ function App() {
             </FormControl>
 
             <div className="wizard-next" onClick={() => setNextStep()}>
-              Siguiente  
-              <ArrowRightAltIcon />
+              <span>Siguiente</span><ArrowRightAltIcon />
             </div>
           </div>
         </section>
@@ -164,13 +163,12 @@ function App() {
                 <FormControlLabel value="Segaría a navaja" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="Segaría a navaja" />
                 <FormControlLabel value="Rechazaría un cachopo" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="Rechazaría un cachopo" />
                 <FormControlLabel value="Renunciaría a mis tierras" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="Renunciaría a mis tierras" />
-                <FormControlLabel value="Regalaría una ternera" control={<Radio sx={{ color: 'white', '.MuiFormControlLabel-label-checked': { backgroundColor: 'white', }, }} />} label="Regalaría una ternera" />
+                <FormControlLabel value="Regalaría una ternera" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="Regalaría una ternera" />
                 
               </RadioGroup>
             </FormControl>
             <div className="wizard-next" onClick={() => setNextStep()}>
-              Siguiente  
-              <ArrowRightAltIcon />
+            <span>Siguiente</span><ArrowRightAltIcon />
             </div>
           </div>
         </section>
@@ -195,12 +193,11 @@ function App() {
               </div>
               <div className={(countDownActivated && countDownFinished) ? "wizard-alarm-outdated showElement" : "wizard-alarm-outdated hideElement"}>
                 Codigo caducado.
-                <span className="wizard-alarm-outdated-restart" onClick={() => restart()}>Reiniciar</span>
+                <span className="wizard-alarm-outdated-restart" onClick={() => restart()}>Reiniciar.</span>
               </div>
             </div>
 
-            <div className="wizard-next" onClick={() => goToSiroko()}><span>Ir a Siroko.com </span>
-            <ArrowRightAltIcon />
+            <div className="wizard-next" onClick={() => goToSiroko()}><span>Ir a Siroko.com</span><ArrowRightAltIcon />
 
             </div>
           </div>
