@@ -1,47 +1,261 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* radio-buttons */
+.MuiFormControl-root{
+    width: 100%;
+    padding: 20px;
+    border-radius: 3px;
 }
+.MuiFormControlLabel-root {
+    padding: 12px;
+    border-radius: 4px;
+    margin-left:  0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 10px;
+    background-color: #FFFFFF17;
+    width: calc(100% - 20px); 
+    height: 20px;
+}
+.MuiRadio-root{
+    padding: 0px 12px 0px 0px !important;
+}
+.MuiButtonBase-root-MuiRadio-root {
+    color: #FFFFFF;
+}
+.MuiFormControlLabel-root.Mui-checked {
+    background-color: #C92F58;
+}
+
+
+.container {
+  min-height: calc(100vh - 98px);
+  padding-bottom: 48px;
+}
+
+.padding { padding: 35px; }
+
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+	width: 125px;
+	background-image: url('./assets/images/logo.png');
+	background-repeat: no-repeat;
+	background-size: 125px;
+	height: 32px;
+	margin-bottom: 25px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.texts {
+      .texts-steps {
+          font-family: 'inter-bold';
+          font-size: 9px;
+          font-weight: 700;
+          color: #2C5E5B;
+          width: fit-content;
+          max-height: 17px;
+          padding: 3px 7px 3px 7px;
+          border-radius: 3px;
+          background-color: #5DC2BD;
+          margin-bottom: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+      }
+      .texts-title {
+          height: 35px;
+          color: white;
+          font-family: 'liberator-siroko-heavy';
+          font-size: 35px;
+          font-weight: 800;
+          line-height: 35px;
+          margin-bottom: 15px;
+      }
+      .texts-subtitle {
+          color: white;
+          font-family: 'inconsolata';
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 18.72px;
+          margin-bottom: 25px;
+      }
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.wizard {
+	background-color: rgb(34, 212, 168);
+	color: white;
+	background-color: #311429;
+	padding: 20px;
+
+  .wizard-text {
+    font-family: 'inter-bold';
+    font-size: 12px;
+    font-weight: 700;
+    color: #EFE5C3;
+    margin-bottom: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .wizard-button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    margin-bottom: 10px;
+    color: white;
+    border-radius: 4px;
+  }
+
+  .wizard-radio {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    color: white;
+
+    .wizard-radio-option{
+      background-color:  #FFFFFF17;
+    }
+
+    .wizard-radio-option-selected {  
+      background-color: #C92F58;
+    }
+  }
+
+	.wizard-next {
+		background-color: #339B95;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 44px;
+		font-family: 'inter-bold';
+		line-height: 17.55px;
+		font-size: 15px;
+		font-weight: 700;
+		color: white;
+		border-radius: 4px;
+
+      span {
+          margin-right: 10px;
+      }
+      svg {
+        font-size: 29px;
+      }
+  } 
+
+  .wizard-code {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 29px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    background: linear-gradient(270deg, #FFFFFF 0%, #BDBDBD 100%);
+
+    .wizard-code-text {
+      font-family: 'inconsolata-bold';
+      font-size: 25px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .wizard-code-copy {
+      width: 42px;
+      padding: 6px 9px 6px 8px;
+      border: 2px solid #000;
+      font-family: 'inconsolata';
+      font-family: Inconsolata;
+      font-size: 14px;
+      font-weight: 700;
+      color: #000;
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .wizard-instructions {
+      color: white;
+      font-family: 'inconsolata';
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18.72px;
+      margin-bottom: 10px;
+  }
+
+  .wizard-alarm {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 15px 10px 15px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    background-color: #2C0C23;
+
+    .wizard-alarm-icon {
+        margin-right: 10px;
+        display: flex;
+
+    svg {
+    font-size: 27px;
+    }
+    }
+
+    .wizard-alarm-countdown {
+        font-family: 'inconsolata-bold';
+        font-size: 27px;
+        font-weight: 700;
+        line-height: 31.59px;
+    }
+  }
+  .wizard-alarm-outdated {
+    background: #C51414;
+    font-family: 'inconsolata-bold';
+    font-size: 16px;
+    font-weight: 700;
+
+    .wizard-alarm-outdated-restart {
+      text-decoration: underline;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+    }
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  padding: 25px;
+  background-color: #000;
+  color: #fff;
+  margin-top: auto;
+}
+.footer-text {
+  font-family: 'inconsolata';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.38px;
+  
+  span {
+      text-decoration: underline;
   }
 }
-
-.card {
-  padding: 2em;
+.footer-text-red{
+  color: #C92F58;
 }
 
-.read-the-docs {
-  color: #888;
+@media (max-width: 375px) {
+  .padding { padding: 25px; }
+  .logo { background-image: url('./assets/images/logo-xs.png'); width: 25px; background-size: 25px; }
 }
 
-.counter {
-  color: #ffffff;
+@media (min-width: 834px) and (orientation: landscape) {
+  .padding { padding: 50px 250px; }
 }
 
+.showElement {
+  display: block;
+}
+.hideElement {
+  display: none;
+}

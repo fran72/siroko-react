@@ -24,11 +24,11 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex;
+  place-items: center; */
   min-width: 320px;
   min-height: 100vh;
-  background-image: url('C:\Users\user\Desktop\siroko-react\siroko-react\src\assets\bg.jpg');
+  background-image: url('C:\Users\user\Desktop\siroko-react\siroko-react\src\assets\images\bg.jpg');
   background-size: cover;
 }
 
@@ -68,4 +68,71 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+
+
+.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control+.mdc-radio__background .mdc-radio__outer-circle {
+  border-color: rgb(255, 255, 255) !important;
+  --mat-radio-checked-ripple-color: none !important;
+}
+.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control+.mdc-radio__background .mdc-radio__inner-circle {
+  border-color: rgb(255, 255, 255) !important;
+  --mat-radio-checked-ripple-color: none !important;
+}
+
+mat-mdc-radio-button mat-accent mat-mdc-radio-checked {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.mdc-label{
+  font-family: 'inconsolata';
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+}
+/* html, body { height: 100%; } */
+
+/* Global fonts */
+@font-face {
+  font-family: 'inter-bold';
+  src: url('./assets/fonts/inter/Inter_18pt-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'inter-regular';
+  src: url('./assets/fonts/inter/Inter_18pt-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'inter-light';
+  src: url('./assets/fonts/inter/Inter_18pt-Light.ttf');
+}
+
+@font-face {
+  font-family: 'inter-thin';
+  src: url('./assets/fonts/inter/Inter_18pt-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'inconsolata';
+  src: url('./assets/fonts/inconsolata/Inconsolata-Light.ttf');
+}
+
+@font-face {
+  font-family: 'inconsolata-bold';
+  src: url('./assets/fonts/inconsolata/Inconsolata-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'liberator-siroko-heavy';
+  src: url('./assets/fonts/liberator-siroko/LiberatorSIROKO-Heavy.ttf');
 }
