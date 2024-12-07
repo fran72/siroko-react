@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import Countdown, {CountdownApi} from 'react-countdown';
 import './App.css'
-import { FormControl, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import { FormControl, RadioGroup, FormControlLabel, Radio, FormControlLabelProps, useRadioGroup } from '@mui/material';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { pink } from '@mui/material/colors';
+
+
 
 function App() {
   var radioValue0;
@@ -103,6 +104,31 @@ function App() {
     handleStartClick();
   }
 
+  function MyFormControlLabel(props: FormControlLabelProps) {
+    const radioGroup = useRadioGroup();
+  
+    let checked = false;
+  
+    if (radioGroup) {
+      checked = radioGroup.value === props.value;
+    }
+  
+    if (checked)
+      return (
+        <FormControlLabel
+          sx={{
+            backgroundColor: () => "#C92F58",
+          }}
+          checked={checked}
+          {...props}
+        />
+      );
+  
+    return <FormControlLabel checked={checked} {...props} />;
+  }
+
+  
+
   return (
     <>
 
@@ -132,16 +158,15 @@ function App() {
                 className="wizard-radio"
                 defaultValue="2016"
               >
-                <FormControlLabel value="2016" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="2016" />
-                <FormControlLabel value="2017" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="2017" />
-                <FormControlLabel value="2018" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="2018" />
-                <FormControlLabel value="2019" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="2019" />
-                <FormControlLabel value="2020" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="2020" />
-                <FormControlLabel value="2021" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="2021" />
+                <MyFormControlLabel value="2016" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white', }, }} />} label="2016" />
+                <MyFormControlLabel value="2017" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white', }, }} />} label="2017" />
+                <MyFormControlLabel value="2018" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white', }, }} />} label="2018" />
+                <MyFormControlLabel value="2019" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white', }, }} />} label="2019" />
+                <MyFormControlLabel value="2020" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white', }, }} />} label="2020" />
+                <MyFormControlLabel value="2021" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white', }, }} />} label="2021" />
                 
               </RadioGroup>
             </FormControl>
-
             <div className="wizard-next" onClick={() => setNextStep()}>
               <span>Siguiente</span><ArrowRightAltIcon />
             </div>
@@ -160,16 +185,14 @@ function App() {
                 className="wizard-radio"
                 defaultValue="Segaría a navaja"
               >
-                <FormControlLabel value="Segaría a navaja" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="Segaría a navaja" />
-                <FormControlLabel value="Rechazaría un cachopo" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="Rechazaría un cachopo" />
-                <FormControlLabel value="Renunciaría a mis tierras" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="Renunciaría a mis tierras" />
-                <FormControlLabel value="Regalaría una ternera" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: pink[600], }, }} />} label="Regalaría una ternera" />
+                <MyFormControlLabel value="Segaría a navaja" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white', }, }} />} label="Segaría a navaja" />
+                <MyFormControlLabel value="Rechazaría un cachopo" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white', }, }} />} label="Rechazaría un cachopo" />
+                <MyFormControlLabel value="Renunciaría a mis tierras" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white', }, }} />} label="Renunciaría a mis tierras" />
+                <MyFormControlLabel value="Regalaría una ternera" control={<Radio sx={{ color: 'white', '&.Mui-checked': { color: 'white', }, }} />} label="Regalaría una ternera" />
                 
               </RadioGroup>
             </FormControl>
-            <div className="wizard-next" onClick={() => setNextStep()}>
-            <span>Siguiente</span><ArrowRightAltIcon />
-            </div>
+            <button className="wizard-next" onClick={() => setNextStep()}><span>Siguiente</span><ArrowRightAltIcon /></button>
           </div>
         </section>
 
@@ -196,10 +219,9 @@ function App() {
                 <span className="wizard-alarm-outdated-restart" onClick={() => restart()}>Reiniciar.</span>
               </div>
             </div>
-
-            <div className="wizard-next" onClick={() => goToSiroko()}><span>Ir a Siroko.com</span><ArrowRightAltIcon />
-
-            </div>
+            <a href="https://www.siroko.com/es/">
+              <button className="wizard-next" onClick={() => goToSiroko()}><span>Ir a Siroko.com</span><ArrowRightAltIcon /></button>
+            </a>
           </div>
         </section>
       </main>
@@ -209,7 +231,7 @@ function App() {
     <footer>
       <div className="footer-text">
         <p>2016-2021 Siroko Solutions S.L.</p>
-        <p>Todos los derechos reservados. <span>Ver bases</span>.</p>
+        <p>Todos los derechos reservados. <a href='https://www.siroko.com/es/'>Ver bases</a>.</p>
       </div>
     </footer>
     </>

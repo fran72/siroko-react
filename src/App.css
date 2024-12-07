@@ -23,7 +23,11 @@
 .MuiFormControlLabel-root.Mui-checked {
     background-color: #C92F58;
 }
-
+.css-rizt0-MuiTypography-root{
+  font-family: 'inconsolata' !important;
+  font-size: 15px;
+  font-weight: 400;
+}
 
 .container {
   min-height: calc(100vh - 98px);
@@ -60,7 +64,7 @@
       }
       .texts-title {
           height: 35px;
-          color: white;
+          color: #fff;
           font-family: 'liberator-siroko-heavy';
           font-size: 35px;
           font-weight: 800;
@@ -68,7 +72,7 @@
           margin-bottom: 15px;
       }
       .texts-subtitle {
-          color: white;
+          color: #fff;
           font-family: 'inconsolata';
           font-size: 16px;
           font-weight: 400;
@@ -78,8 +82,7 @@
 }
 
 .wizard {
-	background-color: rgb(34, 212, 168);
-	color: white;
+	color: #fff;
 	background-color: #311429;
 	padding: 20px;
 
@@ -98,7 +101,7 @@
     width: 100%;
     height: 44px;
     margin-bottom: 10px;
-    color: white;
+    color: #fff;
     border-radius: 4px;
   }
 
@@ -107,7 +110,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    color: white;
+    color: #fff;
 
     .wizard-radio-option{
       background-color:  #FFFFFF17;
@@ -129,7 +132,7 @@
 		line-height: 17.55px;
 		font-size: 15px;
 		font-weight: 700;
-		color: white;
+		color: #fff;
 		border-radius: 4px;
 
       span {
@@ -172,7 +175,7 @@
   }
   
   .wizard-instructions {
-      color: white;
+      color: #fff;
       font-family: 'inconsolata';
       font-size: 16px;
       font-weight: 400;
@@ -190,12 +193,12 @@
     background-color: #2C0C23;
 
     .wizard-alarm-icon {
-        margin-right: 10px;
-        display: flex;
+      margin-right: 10px;
+      display: flex;
 
-    svg {
-    font-size: 27px;
-    }
+      svg {
+        font-size: 27px;
+      }
     }
 
     .wizard-alarm-countdown {
@@ -205,6 +208,7 @@
         line-height: 31.59px;
     }
   }
+
   .wizard-alarm-outdated {
     background: #C51414;
     font-family: 'inconsolata-bold';
@@ -229,19 +233,19 @@ footer {
   background-color: #000;
   color: #fff;
   margin-top: auto;
-}
-.footer-text {
-  font-family: 'inconsolata';
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16.38px;
-  
-  span {
-      text-decoration: underline;
+
+  .footer-text {
+    font-family: 'inconsolata';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.38px;
+    
+    a {
+        text-decoration: underline;
+        color: #fff;
+        font-family: 'inconsolata-bold';
+    }
   }
-}
-.footer-text-red{
-  color: #C92F58;
 }
 
 @media (max-width: 375px) {
