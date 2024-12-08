@@ -5,8 +5,6 @@ import { FormControl, RadioGroup, FormControlLabel, Radio, FormControlLabelProps
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
-
-
 function App() {
   var radioValue0;
   var setRadioValue0 = (event: React.ChangeEvent<HTMLInputElement>) => { 
@@ -59,14 +57,9 @@ function App() {
     if (countdown) { countdownApi = countdown.getApi(); }
   };
 
-  const goToSiroko = () => { console.log('goToSiroko'); };
-
   function setNextStep() {
     const newStep = step + 1;
     setStep(() => newStep);
-
-    console.log('newStep: ', newStep);
-    console.log('wizardOptions[1].questions[0]: ', wizardOptions[1].questions[0]);
 
     if (newStep === 1) {
       setSelectedOption1(() => wizardOptions[1].questions[0]);
@@ -79,7 +72,6 @@ function App() {
       const splittedString = cleanedString.substring(cleanedString.length - 4, cleanedString.length);
       generateCode(splittedString);
     }
-    
   }
 
   async function copyCode () {
@@ -131,17 +123,15 @@ function App() {
 
   return (
     <>
-
     <div className="container padding">
-
       <header>
-        <div className="logo"></div>
+        <section className="logo"></section>
 
-        <div className="texts">
+        <section className="texts">
           <div className="texts-steps">{stepOptions[step].title}</div>
           <div className="texts-title">{titleOptions[step].title}</div>
           <div className={"texts-subtitle" + (step === 0 ? ' showElement' : ' hideElement')}>Has llegado hasta el test de Siroko. Responde las siguientes preguntas y genera tu código premiado a medida. </div>
-        </div>
+        </section>
       </header>
 
       <main>
@@ -175,7 +165,7 @@ function App() {
 
         <section className={step === 1 ? 'showElement' : 'hideElement'}>
           <div className="wizard">
-            <div className="wizard-text">USO SIROKO DESDE...</div>
+            <div className="wizard-text">POR UNAS GAFAS SIROKO, YO...</div>
             <FormControl>
               <RadioGroup
                 aria-labelledby="demo-controlled-radio-buttons-group-1"
@@ -198,29 +188,27 @@ function App() {
 
         <section className={step === 2 ? 'showElement' : 'hideElement'}>
           <div className="wizard">
-            <div className="wizard-text">LO PROMETIDO ES DEUDA</div>
+            <span className="wizard-text">LO PROMETIDO ES DEUDA</span>
 
             <div className="wizard-code">
-              <div className="wizard-code-text">{code}</div>
-              <div className="wizard-code-copy" onClick={() => copyCode()}>Copiar</div>
+              <span className="wizard-code-text">{code}</span>
+              <span className="wizard-code-copy" onClick={() => copyCode()}>Copiar</span>
             </div>
 
             <div className="wizard-instructions">Introduce este código en tu próxima compra para conseguir tu premio. ¡Disponible durante 20 minutos!</div>
 
             <div className={"wizard-alarm " + (countDownFinished ? "wizard-alarm-outdated" : "")}>
-              <div className="wizard-alarm-icon"> 
-                <AccessAlarmIcon />
-              </div>
+              <div className="wizard-alarm-icon"><AccessAlarmIcon /></div>
               <div className={(countDownActivated && !countDownFinished) ? "wizard-alarm-countdown showElement" : "wizard-alarm-countdown hideElement"}>
                 <Countdown ref={setRef} date={date} renderer={renderer}/>
               </div>
               <div className={(countDownActivated && countDownFinished) ? "wizard-alarm-outdated showElement" : "wizard-alarm-outdated hideElement"}>
                 Codigo caducado.
-                <span className="wizard-alarm-outdated-restart" onClick={() => restart()}>Reiniciar.</span>
+                <span className="wizard-alarm-outdated-restart" onClick={() => restart()}>Reiniciar</span>.
               </div>
             </div>
             <a href="https://www.siroko.com/es/">
-              <button className="wizard-next" onClick={() => goToSiroko()}><span>Ir a Siroko.com</span><ArrowRightAltIcon /></button>
+              <button className="wizard-next"><span>Ir a Siroko.com</span><ArrowRightAltIcon /></button>
             </a>
           </div>
         </section>
@@ -229,10 +217,10 @@ function App() {
     </div> 
 
     <footer>
-      <div className="footer-text">
+      <section className="footer-text">
         <p>2016-2021 Siroko Solutions S.L.</p>
         <p>Todos los derechos reservados. <a href='https://www.siroko.com/es/'>Ver bases</a>.</p>
-      </div>
+      </section>
     </footer>
     </>
   )
